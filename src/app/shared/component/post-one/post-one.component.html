@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-body">
+        <h3 class="text-uppercase">{{isInEditMode? 'Update Todo': 'Add Todo'}}</h3>
+        <form #listForm="ngForm" (ngSubmit)="addTodo()">
+            <div class="form-group">
+                <label for="title">Todo Item <sup>*</sup></label>
+                <input type="text" class="form-control" name="title" ngModel required>
+            </div>
+            <button class="btn btn-primary" *ngIf="!isInEditMode ;else inEditMode" type="submit">Add Todo</button>
+            <ng-template #inEditMode>
+                <button class="btn btn-primary" (click)="updateTodo()" type="button">Update Todo</button>
+            </ng-template>
+
+        </form>
+    </div>
+</div>

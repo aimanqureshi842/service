@@ -1,0 +1,15 @@
+<h3 class="alert alert-info text-capitalize">all crud done here</h3>
+<ul class="list-group" *ngIf="postArr.length>0 ;else noTodo">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let post of postArr">
+        <strong>
+            {{post.title|titlecase}}
+        </strong>
+        <div>
+            <button class="btn btn-outline-primary btn-sm mr-1" (click)="editList(post)">Edit</button>
+            <button class="btn btn-outline-danger btn-sm" (click)="removeList(post.id)">Remove</button>
+        </div>
+    </li>
+</ul>
+<ng-template #noTodo>
+    <p class="alert alert-danger border">No todo added yet , Add to let go !</p>
+</ng-template>
