@@ -1,6 +1,6 @@
 <h3 class="alert alert-info text-capitalize">all crud done here</h3>
 <ul class="list-group" *ngIf="postArr.length>0 ;else noTodo">
-    <li class="list-group-item d-flex justify-content-between" *ngFor="let post of postArr">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let post of postArr;trackBy:trackById">
         <strong>
             {{post.title|titlecase}}
         </strong>

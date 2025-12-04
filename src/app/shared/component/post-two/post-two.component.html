@@ -1,5 +1,5 @@
 <ul class="list-group" *ngIf="posts.length>0 ;else noTodo">
-    <li class="list-group-item d-flex justify-content-between" *ngFor="let post of posts">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let post of posts;trackBy:trackById">
         <strong>
             {{post.title|titlecase}}
         </strong>

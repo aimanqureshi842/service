@@ -15,6 +15,9 @@ postArr:Array<IPost>=[]
   ngOnInit(): void {
     this.fetchPost()
   }
+  trackById(index:number,post:IPost){
+return post.id
+  }
 fetchPost(){
 this.postArr=this._postService.fetchAllPosts()
 }
